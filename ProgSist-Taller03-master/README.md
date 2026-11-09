@@ -75,3 +75,7 @@ make -f Testfile readme
 ## Entregable
 Completar está práctica reparando los errores y modificando el README.md, con al menos dos commit/push.
 No olvidar hacer _git add_; _git commit_ y _git push_
+
+## Debug
+<img width="956" height="972" alt="Captura de pantalla 2026-11-09 171055" src="https://github.com/user-attachments/assets/11214767-8771-4545-87a8-694c4d3bcf4f" />
+<img width="946" height="1013" alt="Captura de pantalla 2026-11-09 173337" src="https://github.com/user-attachments/assets/d2d87151-0f0d-410a-9bda-22eb24849dd5" />
