@@ -79,22 +79,41 @@ int main (int argc, char *argv[])
 	float temperatura;
 	
 	//TODO: nodo xyz = null
+	cabecera = NULL;
+	nodo_actual = NULL;
+	nodo_anterior = NULL;
 	do{
 		n = fscanf(fp,"%hd\t%hd\t%hd\t%f",&mes,&dia,&hora,&temperatura);
 		
 		if(n == 4){
-			nodo_actual = NULL; //(nodo_t *) malloc(sizeof(nodo_t));
+			//PRIMER DEBUG, descomenté
+			nodo_actual = (nodo_t *) malloc(sizeof(nodo_t));
 			nodo_actual->mes = mes;
 			nodo_actual->dia = dia;
 			nodo_actual->hora = hora;
 			nodo_actual->temperatura = temperatura;
-			nodo_actual->siguiente = nodo_anterior;
-			cabecera = nodo_actual;
+			//nodo_actual->siguiente = nodo_anterior;
+			//cabecera = nodo_actual;
+
 			//TODO: nodo xyz = nodo abc
+			//SEGUNDO DEBUG, no guarda los anteriores
+			if(cabecera == NULL) cabecera = nodo_actual; //crea el primer nodo
+			else nodo_anterior->siguiente = nodo_actual; //crea los posteriores nodos
+			//Desde aquí guarda el previos
+			nodo_anterior = nodo_actual;
 		}
 		//TODO: else if 0 fprintf/return1
+		//Esta parte no entiendo que mensaje pide, por lo que, es improvisado
+		else if(n == 0){
+			fprintf(stderr,"Error al leer, se finaliza.\n");
+			fclose(fp);
+			return 1;
+		}
 
 	}while(n > 0);
+
+	//tampoco cierra el archivo
+	fclose(fp);
 
 	recorrer_lista(cabecera);
 }
