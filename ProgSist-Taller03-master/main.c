@@ -103,9 +103,8 @@ int main (int argc, char *argv[])
 			nodo_anterior = nodo_actual;
 		}
 		//TODO: else if 0 fprintf/return1
-		//Esta parte no entiendo que mensaje pide, por lo que, es improvisado
 		else if(n == 0){
-			fprintf(stderr,"Error al leer, se finaliza.\n");
+			fprintf(stderr,"Error al leer %s\n", nombre_archivo);
 			fclose(fp);
 			return 1;
 		}
